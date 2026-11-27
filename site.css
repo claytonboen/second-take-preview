@@ -210,3 +210,13 @@ input[aria-invalid=true]{border-color:#ff8a7f!important;outline:1px solid #ff8a7
 .rates li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-top:1px solid var(--rule);font:400 16px/1.3 var(--sans)}
 .rates b{font:400 28px/1 var(--tall);letter-spacing:.04em}
 .slate .btn.go{height:auto;min-height:52px;padding:14px 18px;text-align:center;white-space:normal;line-height:1.35}
+
+.fmt.pkgs{margin-top:6px}
+.fmt a{color:var(--ivory);text-decoration:underline;text-underline-offset:3px}
+.fmt a:hover{color:#fff}
+.packs{margin-top:22px;padding-top:4px;border-top:1px solid var(--rule)}
+.packs-h{margin:0 0 4px;font:500 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.pack{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);text-decoration:none;font:400 16px/1.3 var(--sans);color:var(--ivory)}
+.pack b{font:400 28px/1 var(--tall);letter-spacing:.04em}
+.pack:hover{color:#fff}
+.pack:hover b{color:var(--red)}
