@@ -205,3 +205,8 @@ input[aria-invalid=true]{border-color:#ff8a7f!important;outline:1px solid #ff8a7
 
 [hidden]{display:none!important}
 .agree{margin:0;font:400 12.5px/1.5 var(--sans);color:var(--dim)}
+
+.rates{list-style:none;margin:16px 0 0;padding:0}
+.rates li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-top:1px solid var(--rule);font:400 16px/1.3 var(--sans)}
+.rates b{font:400 28px/1 var(--tall);letter-spacing:.04em}
+.slate .btn.go{height:auto;min-height:52px;padding:14px 18px;text-align:center;white-space:normal;line-height:1.35}
