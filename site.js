@@ -1,37 +1,23 @@
 (()=>{
-const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const $=(s,r=document)=>r.querySelector(s);
 const v=$('.reel'),pb=$('.pause');
 if(v&&pb){
   const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-  if(reduce.matches){v.removeAttribute('autoplay');v.pause()}
   const setP=p=>{pb.setAttribute('aria-pressed',p);pb.setAttribute('aria-label',p?'Play the reel':'Pause the reel')};
-  if(reduce.matches)setP(true);
+  if(reduce.matches){v.removeAttribute('autoplay');v.pause();setP(true)}
   pb.addEventListener('click',()=>{if(v.paused){v.play();setP(false)}else{v.pause();setP(true)}});
   const mq=matchMedia('(max-width: 700px)');
   mq.addEventListener('change',()=>{const t=v.currentTime;v.load();v.currentTime=t;if(!reduce.matches)v.play().catch(()=>{})});
 }
 
-const d=$('#book');
-if(d){
-  const minor=$('.minor',d);
-  const sync=()=>{
-    const l=(d.querySelector('input[name=lesson]:checked')||{}).value;
-    if(minor) minor.hidden=l==='adults';
-  };
-  $$('input[name=lesson]',d).forEach(i=>i.addEventListener('change',sync));
-  const open=l=>{
-    if(l){const r=d.querySelector('input[name=lesson][value="'+l+'"]'); if(r) r.checked=true}
-    sync();
-    d.showModal();
-    const c=$('.clap i',d);
-    if(c){c.style.animation='none';c.offsetWidth;c.style.animation=''}
-  };
-  $$('[data-book]').forEach(a=>a.addEventListener('click',e=>{
-    e.preventDefault();
-    open(a.dataset.book);
-  }));
-  if(location.hash==='#book')open();
-  d.addEventListener('click',e=>{if(e.target===d)d.close()});
+const bar=$('.bar'),btn=$('.menu'),nav=$('#nav');
+if(btn&&nav){
+  const set=o=>{bar.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)};
+  btn.addEventListener('click',()=>set(btn.getAttribute('aria-expanded')!=='true'));
+  nav.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&btn.getAttribute('aria-expanded')==='true'){set(false);btn.focus()}});
+  document.addEventListener('click',e=>{if(!bar.contains(e.target))set(false)});
+  matchMedia('(min-width: 1101px)').addEventListener('change',e=>{if(e.matches)set(false)});
 }
 
 const yr=$('#yr'); if(yr) yr.textContent=new Date().getFullYear();
