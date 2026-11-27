@@ -50,15 +50,15 @@
 
     <div class="lessons" id="lessons" aria-label="Lessons">
       <a class="ticket" href="#book" data-book="kids">
-        <span class="who">Kids</span><span class="meta">Booked by a parent</span><span class="price" title="Price placeholder">$—</span><span class="go">Book</span>
+        <span class="who">Kids</span><span class="meta">Booked by a parent</span><span class="go">Book</span>
       </a>
       <a class="ticket" href="#book" data-book="teens">
-        <span class="who">Teens</span><span class="meta">Booked by a parent</span><span class="price" title="Price placeholder">$—</span><span class="go">Book</span>
+        <span class="who">Teens</span><span class="meta">Booked by a parent</span><span class="go">Book</span>
       </a>
       <a class="ticket" href="#book" data-book="adults">
-        <span class="who">Adults</span><span class="meta">18 and over</span><span class="price" title="Price placeholder">$—</span><span class="go">Book</span>
+        <span class="who">Adults</span><span class="meta">18 and over</span><span class="go">Book</span>
       </a>
-      <p class="fmt">One-to-one with Clayton · Online <span class="ph">[confirm format &amp; length]</span></p>
+      <p class="fmt">One-to-one with Clayton</p>
     </div>
   </div>
 </section>
@@ -106,7 +106,6 @@
       <li><span><b>Your material.</b> Bring an audition, a self-tape, or a scene you’re working on. Or use one of his free sides.</span></li>
       <li><span><b>Direction, then another take.</b> You perform the scene, Clayton gives you a direction, you run it again.</span></li>
       <li><span><b>Kids and teens.</b> A parent or guardian books the lesson and gives consent.</span></li>
-      <li><span><b>Online.</b> <span class="ph">[confirm: online video call / in person, and lesson length]</span></span></li>
     </ul>
   </div>
   <a class="btn book big" href="#book" data-book>Book a lesson</a>
@@ -117,30 +116,8 @@
   <p class="lead">Original scenes written by Clayton for class. Download, rehearse, bring one to your lesson.</p>
   <div class="sidelist">
     <a class="side" href="schoolyard.pdf" download><span class="n">Schoolyard</span><span class="m">Younger actors · PDF</span></a>
-    <a class="side" href="club-fair.pdf" download><span class="n">Club Fair</span><span class="m">Teens &amp; adults · PDF · Contains references to Nazis, antisemitism and violence against children</span></a>
+    <a class="side" href="club-fair.pdf" download><span class="n">Club Fair</span><span class="m">Teens &amp; adults · PDF</span></a>
   </div>
-  <details class="submit">
-    <summary>Send Clayton a take</summary>
-    <form id="take" novalidate>
-      <fieldset class="age">
-        <legend>Who is the actor?</legend>
-        <label><input type="radio" name="tage" value="adult" checked> 18 or over</label>
-        <label><input type="radio" name="tage" value="minor"> Under 18</label>
-      </fieldset>
-      <div class="g only-minor">
-        <label>Parent or guardian name<input name="gname" autocomplete="name"></label>
-        <label>Parent or guardian email<input name="gemail" type="email" autocomplete="email"></label>
-        <label class="chk"><input type="checkbox" name="gconsent"><span>I’m the actor’s parent or legal guardian and I consent to sending this recording to Clayton Boen. It’s kept private and used only for feedback.</span></label>
-      </div>
-      <div class="g only-adult">
-        <label>Your name<input name="aname" autocomplete="name"></label>
-        <label>Your email<input name="aemail" type="email" autocomplete="email"></label>
-      </div>
-      <label>Recording<input type="file" name="file" accept="video/*" disabled></label>
-      <p class="ph">[Placeholder: private upload is not connected. Needs a storage service before launch.]</p>
-      <button class="btn" type="submit" disabled>Send take</button>
-    </form>
-  </details>
 </section>
 </main>
 
@@ -158,9 +135,9 @@
   <form id="bookform" novalidate>
     <fieldset class="pick">
       <legend>Lesson</legend>
-      <label><input type="radio" name="lesson" value="kids"><span>Kids</span><em>$—</em></label>
-      <label><input type="radio" name="lesson" value="teens"><span>Teens</span><em>$—</em></label>
-      <label><input type="radio" name="lesson" value="adults" checked><span>Adults</span><em>$—</em></label>
+      <label><input type="radio" name="lesson" value="kids"><span>Kids</span></label>
+      <label><input type="radio" name="lesson" value="teens"><span>Teens</span></label>
+      <label><input type="radio" name="lesson" value="adults" checked><span>Adults</span></label>
     </fieldset>
 
     <div class="minor" hidden>
@@ -174,17 +151,16 @@
         <label>Actor’s age<input name="aage" inputmode="numeric" pattern="[0-9]*" maxlength="2" required></label>
       </div>
       <label class="chk"><input type="checkbox" name="consent" required><span>I’m this actor’s parent or legal guardian and I consent to their lesson with Clayton Boen.</span></label>
-      <label class="chk"><input type="checkbox" name="present" required><span>I’ll be present or nearby for the lesson. <span class="ph">[confirm policy]</span></span></label>
+      <label class="chk"><input type="checkbox" name="present" required><span>I’ll be present or nearby for the lesson.</span></label>
     </div>
     <p class="agree">By continuing you <span class="adult">confirm you’re 18 or older and </span>agree to the <a href="terms.html" target="_blank">Terms</a> and <a href="refunds.html" target="_blank">Refund policy</a>.</p>
 
     <button class="btn go" type="submit">Pick a time &amp; pay</button>
     <p class="err" role="alert" hidden></p>
-    <p class="sq">Times and payment by Square. <span class="ph">[Placeholder: Square Appointments not connected]</span></p>
+    <p class="sq">Times and payment by Square.</p>
   </form>
   <div class="done" hidden>
-    <p class="big">Square checkout opens here.</p>
-    <p class="ph">[Placeholder: this step hands off to Square Appointments with the lesson, and for minors the guardian’s consent, attached. No account is connected.]</p>
+    <p class="big">Thanks. Online scheduling opens soon.</p>
   </div>
 </dialog>
 
